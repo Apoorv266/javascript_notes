@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // (keep a note of the space while declaring regex...space is also considered while matching)
+
+
+    let regex = /\w Apoorv/  //matches only one word character where ever it is placed- _ or alphabet or numbers 
+    regex = /\w+ Apoorv/;    // \w+ means one or more word characters - it matches till word character only
+    regex = /\Wis/;       // Matches only one Non word character where it is placed (a space is also a non word character)
+    regex = /\W+ is/;      // \W+ means more than one Non word character
+    regex = / number\d999/; // \d means digit and it matches on digit whereever it is placed
+    regex = /number \d+/;   // \d+ means more than one digit get matched (only digit)
+    regex = /\D999/;        // \D means ONLY ONE non digit
+    regex = /\D+999/;       // \D+ means more than one non digit match
+    regex = /\snumber/;  // Match only one whitespace character (\s represents white space)
+    regex = /\s+ka number/; // \s+ means match one or more than one whitespace character
+    regex = /\Ska number/;  // Match non whitespace character
+    regex = /\S+ka number/; // Match one or more than one non whitespace character
+    regex = /Apoorv\b/;  // word boundary (it means a new word starts from the point where \b/ is placed)
+
+    let str = "This @%%%% is Apoorv ka number 93aaaaa99999"
+
+
+    // Assertions
+    // regex = /h(?=y)/;  //only match the h which is followed by a "y"
+    // regex = /h(?!y)/;  //only match h which is not followed by y (opposite of above)
+
+//   str = "hyorse is he"
+
+    let result = regex.exec(str);
+    console.log("The result from exec is ", result);
+
+    if (regex.test(str)) {
+        console.log(`The string ${str} matches the expression ${regex.source}`);
+    }
+    else {
+        console.log(`The string ${str} does not match the expression ${regex.source}`);
+    }
+</script>
+
+</html>

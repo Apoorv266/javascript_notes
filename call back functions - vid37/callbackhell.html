@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const getRollNo = () => {
+
+
+        setTimeout(() => {
+
+
+            let Rollv = [1, 2, 3, 4, 5];
+            console.log(Rollv)
+
+
+            setTimeout(( Rollv) => { 
+                const biodata = {
+                    name: "Apoorv",
+                    age: 21,
+                    gender : "male"
+                }
+
+                console.log(`This is roll no 2 and my name is ${biodata.name} and age is ${biodata.age}`)
+
+                setTimeout((func) => {
+
+                    console.log(`My gender is ${func}`)
+                    
+                }, 2000, biodata.gender);
+
+            }, 2000  , Rollv[1])
+
+
+
+        }, 2000)
+        // setTimeout function takes time along will parameter as well
+    }
+
+    getRollNo()
+</script>
+
+</html>

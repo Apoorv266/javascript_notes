@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<Script>
+    let obj4 = {
+        name: "harry",
+        channel: "Code With Harry",
+        address: "Mars"
+    }
+
+    console.log(obj4);
+    // the protoype of object obj will say that we have created this obj using protype object 
+    // object literal methods only show one default object as prototype
+
+    function Obj(givenName) {
+        this.name = givenName
+    }
+    let obj2 = new Obj("Rohan Das");
+    console.log(obj2);
+
+    // with the help of constructor function we make our own object inside the default javascript object 
+
+    // obj.prototype - its a prototype of obj function that we have created using constructor function
+    // object.prototype - prototype of default object which should never be changed
+
+    // never change the default object prototype
+    // The prototype object that we have created using constructor function can be altered
+    // Always created own protoyype using constructor and then change the prototype
+    // Constructors creates an object inside the default engine object (object object)
+    // A typical object inherits properties from Object.prototype
+    // All objects see the object prototype object changes through prototype chaining unless the properties and methods subject to those changes are overridden further along the prototype chain.
+    // Whenever we create a function using JavaScript, the JavaScript engine adds a prototype property inside a function. The prototype property is an object where we can attach methods and properties in a prototype object, which enables all the other objects to inherit these methods and properties.
+
+    Obj.prototype.getName = function () {
+        return this.name;
+    }
+    // to change prototype of the constructor 
+
+
+    Obj.prototype.setName = function (newName) {
+        this.name = newName;
+    }
+    // to set a new prototype inside constructor 
+     
+
+    function MyDetails(name, job, yearOfBirth) {
+        this.name = name;
+        this.job = job;
+        this.yearOfBirth = yearOfBirth;
+    }
+    console.log(MyDetails.prototype)
+
+    // Since the above is just an object constructor and not object therefore the prototype of this function is only constructor
+</Script>
+
+</html>

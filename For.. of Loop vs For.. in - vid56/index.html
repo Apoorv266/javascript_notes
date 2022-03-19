@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<Script>
+    people = ["Harry", "Rohan", "SkillF", "Shubham", "Vikrant"];
+
+    //INTERATING AND ARRAY Traditional for loop
+    for (let i = 0; i < people.length; i++) {
+        const element = people[i];
+        // console.log(element)
+    }
+
+    let obj = {
+        name: "Apoorv",
+        language: "Javascript",
+        hobbies: "play video games"
+    }
+
+    // console.log(Object.keys(obj))
+
+    // ITERATING A OBJECT using Traditional for loop
+    for (let index = 0; index < Object.keys(obj).length; index++) {
+        const element = obj[Object.keys(obj)[index]];
+        // console.log(element);
+    }
+
+    // 1.2 ITERATING A OBJECT using for-in loop:
+    for (let key in obj) {
+        // console.log(obj[key]);
+        // KEY IS NOT GIVEN AS STRING WHILE FETCHING VALUES IN FOR IN LOOP-SO THE SYNTAX IS NOT obj["key"]
+    }
+
+    // 2. ITERATING A STRING
+    // We can use for in with strings to loop through all the characters
+    myString = "This is my string";
+    for (let char in myString) {
+        // console.log(myString[char]);
+        // fetches value through key by the format key[value]
+    }
+
+    // an array and the string too contains a key that contains a value but the key is hidden only values are visible unlike in objects where both key and value pair is visible:
+
+    // The key of an array is : array[0,1,2,3...]
+    // The key of a string is : string[0,1,2,3...]
+
+    // **********For of loop***********
+    people = ["Harry", "Rohan", "SkillF", "Shubham", "Vikrant"];
+
+    for (let value of people) {
+        // console.log(value);
+    }
+
+    for (let Myname of myString) {
+        console.log(Myname);
+        // directly fetches the value of the key
+    }
+
+    // for in is used to get keys of an object and iterate it
+    // for in is used for objects
+    // for in fetch the key of the objects
+    // for of detch the value of the array, string
+    // for of is used with any iterable objects like array and string
+
+
+
+    let alien = {
+        tech: "JS",
+        laptop: {
+            cpu: "i7",
+            ram: 4,
+            brand: "Asus"
+        }
+    }
+
+    for (let key in alien["laptop"]) {
+        // console.log(key)
+    }
+</Script>
+
+</html>

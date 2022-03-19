@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    async function harry() {
+        console.log('Inside harry function');
+        // as the function sees await it returns back to execute other parts of the js
+        const response = await fetch('https://api.github.com/users');
+        console.log('before response');
+        // here also function will go back but since all the executions has already taken place , it will move forward
+        const users = await response.json();
+        console.log('users resolved')
+        return users;
+        // the returned user is stored in variable that called the function which is a
+        // the user is returned as the resolve (Promise.resolve(users)) that can be obtained using .then
+
+        // return "harry";
+    }
+
+    console.log("Before calling harry")
+    // from here the execution enters the function and it reaches fetch part
+    let a = harry();
+    console.log("After calling harry")
+    // since promise is not yet resolved  it will show in pending state
+    console.log(a);
+
+    // users which is json() gets stored inside the data
+    // a is now a promise and .then method can be applied to it
+    a.then(data => console.log(data))
+    console.log("Last line of this js file")
+    // after printing "last line" the async function is executed
+</script>
+
+</html>

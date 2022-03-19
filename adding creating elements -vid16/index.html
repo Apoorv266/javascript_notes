@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+
+    <div id="fui">
+        <ul id="myul">
+            <li id="newid"></li>
+            <li id="lui">hello world</li>
+        </ul>
+    </div>
+
+    <div id="answer">
+        <!-- <h1><a href="www.codewithharry/com">Go to code with harry</a></h1>
+<a href="www.codewithharry/com"><h1>Go to code with harry</h1></a> -->
+    </div>
+</body>
+<script>
+
+    let elems = document.createElement("div")
+    // to create an element
+
+    elems.className = "hello"
+    // to add class to the new element
+
+    elems.id = "bye"
+    // to add id to the new element
+
+    elems.innerText = "BJP HAYE HAYE"
+    // to add text to new element
+
+    elems.innerHTML = "<b>BJP HAYE HAYE</b>"
+    // to add html to new element
+
+    let text = document.createTextNode(" iam the best");
+    elems.append(text)
+    // adding text using createtextnode
+
+    container.append(elems)
+    // alternate way ->
+    let ul = document.getElementById("container")
+    ul.append(elems)
+    // to append element in the DOM
+
+    console.log(elems)
+
+    // console.log(document.body.children)
+    // to check if the element is appended or not
+
+    let elems2 = document.createElement("p")
+    elems2.innerText = "Congress"
+    elems2.id = "getid"
+    elems.replaceWith(elems2)
+    // to replace an element with other element
+
+
+    let get = document.getElementById("myul")
+    get.replaceChild(elems, document.getElementById("newid"))
+    // to replace a child (new element, old element)
+    // the old element should be a child of some parent in this case myul
+
+    get.removeChild(document.getElementById("lui"))
+    // to remove child - we have removed last child li with id lui in ul of id myul
+
+
+    // attributes
+
+    let pr = elems2.getAttribute("id")
+    console.log(pr)
+    // to get attribute of an element (elems2)
+
+    let pr2 = elems2.hasAttribute("id")
+    console.log(pr2)
+    // to check if an attribute is present or not - return true or false
+
+    let pr3 = elems2.removeAttribute("id")
+    console.log(pr3)
+    // to remove an attribute
+
+    elems.setAttribute("title", "myTitle")
+    // to set attribute 
+
+
+    // create an element with text "Go to Code with harry" and create a tag outside it wiht href = https://www.codewitharry.com
+
+
+
+    let element0 = document.createElement("a")
+    element0.setAttribute("href", "https://www.codewitharry.com")
+
+    let element2 = document.createElement("h1")
+    element2.innerText = "Go to Code with harry"
+
+    element0.append(element2)
+
+    let element5 = document.getElementById("answer")
+    element5.append(element0)
+
+    // alternative way by using innerHTML
+
+    let element = document.createElement("a")
+    element.innerHTML = "<h1>Go to Code with harry</h1>"
+    element.setAttribute("href", "https://www.codewitharry.com")
+
+    let element4 = document.getElementById("answer")
+
+    element4.append(element)
+
+
+
+
+
+</script>
+
+</html>

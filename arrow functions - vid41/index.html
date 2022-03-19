@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // normal way to write the function
+    function myFunction() {
+        console.log("hello!")
+    }
+
+    myFunction()
+
+
+    // Alternative way to write same function is assigning it in variable and calling that variable
+    const myFunction2 = function () {
+        console.log("hello!")
+    }
+
+    myFunction2()
+
+
+    // writing same function with the help of arrow function
+    const myFunction3 = () => {
+        console.log("hello!")
+    }
+
+    myFunction3()
+
+
+    // new function
+    const greet2 = function () {
+        return "Good night";
+        // the return value will return the value to the function that called it
+    }
+
+    console.log(greet2())
+
+
+    // one liners do not require braces and return
+    // one line will automatically return
+    const greet = () => "Good morning";
+
+    console.log(greet())
+
+    // to return object in one line we need to enclose the object in ()
+    const obj = () => ({ Name: "Apoorv" });
+
+    console.log(obj())
+
+    // to pass parameters in the one liner functions then we dont have to enclose the parameter in the ()
+
+    const func = (name) => "Good morning " + name;
+    console.log(func("Apoorv"))
+
+    // can also be written without () if there is only one parameter
+
+    const func1 = name => "Good night " + name;
+    console.log(func1("Apoorv"))
+
+    // to pass 2 parameters in the arrow function - we need to enclose the parameters inside ()
+
+    const func2 = (name, age) => "Good evening " + name + "who is " + age;
+    console.log(func1("Apoorv" , 23))
+
+</script>
+
+</html>

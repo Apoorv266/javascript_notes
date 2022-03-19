@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <form>
+        <button id="btn">Click here to submit</button>
+    </form> -->
+
+    <form action="/action_page.php" id="btn">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+<script>
+    let btnevent = document.getElementById("btn")
+    btnevent.addEventListener("click", func1)
+    btnevent.addEventListener("dblclick", func2)
+    // this is an event of dblclick
+    btnevent.addEventListener("mousedown", func2)
+    // this is an event of mousedown
+
+    function func1(e) {
+        console.log("thanks");
+        e.preventDefault()
+        // to prevent the actual behaviour of an element when clicked we use preventDefault for example a form submits a form when clicked but by using preventDefault we will stop form to submit form and tell it to print thanks
+    }
+
+    function func2(e) {
+        console.log("this is double  click")
+    }
+
+    function func3(e) {
+        console.log("this is mouse down")
+    }
+
+    document.getElementById("text").addEventListener("mouseenter", function () {
+        console.log("you entered the textbar")
+    })
+    // this is the event of mouseenter 
+
+    document.getElementById("text").addEventListener("mouseleave", function () {
+        console.log("you left the textbar")
+    })
+    // this is the event of mouseleave
+
+    document.getElementById("text").addEventListener("mousemove", function () {
+        console.log("you triggered mousemove event")
+    })
+    // this is the event of mouse move
+
+    document.getElementById("fname").addEventListener('mousemove', function (e) {
+        console.log(e.offsetX, e.offsetY);
+        document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetX},154)`;
+        console.log('You triggered mouse move event')
+        // we have given rbg value in terms of offset so that it becomes dynamic
+
+</script>
+
+</html>

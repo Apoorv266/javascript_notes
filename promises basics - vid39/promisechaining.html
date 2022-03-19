@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("1");
+        }, 1000)
+    }) 
+
+    const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("2");
+        }, 1000)
+    }) 
+
+
+    
+
+    p1.then((data)=>{
+        console.log("then1" , data)
+        return p2
+    }).then((data)=>{
+        console.log("then2" , data)
+    }).catch((err)=>{
+        console.log(err)
+    }).finally(()=> console.log("we are done"))
+
+    Promise.all([p1, p2]).then(data => {
+        // console.log( "all" ,data)
+    })
+
+
+    // finally will still be printed when the whole program will be completed
+//    Chaining chains all the processes and as the chain proceeds the .then picks up resolve and if any of the step throws error .catch catches it
+
+
+// video tutorial = https://www.youtube.com/watch?v=aA4-VNZK2s0
+
+</script>
+
+</html>

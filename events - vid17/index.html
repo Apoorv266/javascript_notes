@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="click">Click me</h1>
+    <h1 id="lick" class="yourclass">Click me</h1>
+</body>
+<script>
+    let click = document.getElementById("click")
+
+    click.addEventListener('click', function(e){
+        document.write("working")
+        console.log(e)
+    })
+
+    // addEventListener is used to add a function along with the event - click is the event in this case
+
+    // event object is the default argument of the function denoted by e
+
+    lick.addEventListener('click', function(e){
+        console.log(e.target.className)
+        console.log(e.target.id)
+        console.log(e.target.classList)
+    })
+    // target is important object of e event which returns the element that is clicked
+
+    lick.addEventListener('click', function(e){
+        console.log(e.offsetX)
+    })
+
+    // offsetX of event object (e) tells us where we have clicked horizontally on the element on which we have added event
+
+    lick.addEventListener('click', function(e){
+        console.log(e.offsetY)
+    })
+
+     // offsetY of event object (e) tells us where we have clicked vertically on the element on which we have added event
+
+     lick.addEventListener('click', function(e){
+        console.log(e.clientY)
+
+    })
+    // offsetY of event object (e) tells us where we have clicked vertically on the element on which we have added event with resepct to browser window
+
+    lick.addEventListener('click', function(e){
+        console.log(e.clientX)
+
+    })
+
+      // offsetX of event object (e) tells us where we have clicked hotizontally on the element on which we have added event with resepct to browser window
+</script>
+</html>

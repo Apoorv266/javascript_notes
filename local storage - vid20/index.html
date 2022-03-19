@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    localStorage.setItem("name", "Apoorv")
+    localStorage.setItem("name2", "Kapoor")
+    // To set local storage - it has key value pair
+    // local storage is the part of window object
+
+    console.log(localStorage.name)
+    console.log(localStorage.name2)
+    // to get the individual item
+
+    console.log(localStorage.getItem("name",))
+    console.log(localStorage.getItem("name2",))
+    // alternative way to get individual item
+
+    console.log(localStorage.getItem("name3"))
+    // if we getitem of value that doesnt exists it returns null - name3 doesnt exist
+
+    // localStorage.clear()
+    // to clear local storage
+
+    localStorage.removeItem("name", "Apoorv")
+    // to clear particular key value pair
+
+    let impArray = [1, 3, 4, 5]
+    localStorage.setItem("numbers", JSON.stringify(impArray))
+    let number = JSON.parse(localStorage.getItem("numbers"))
+    console.log(number)
+    // to add an array inside local storage we first convert the array into string using JSON stringify and then again convert string into array using JSON.parse
+
+
+    // session storage is saved just for a session..all storage will go if the browser is closed
+
+    // Local storage is permanent
+
+
+    sessionStorage.setItem("nam3", "Apoorv")
+    sessionStorage.setItem("name4", "Kapoor")
+    // to set key value pair in session storage
+
+</script>
+
+</html>

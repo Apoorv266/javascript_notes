@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let today = new Date();
+    // console.log(typeof today);
+    // to set todays date - the type of date is object 
+
+    let otherDate = new Date('8-4-2003 04:54:08');
+    // to set a specific date and time
+
+    otherDate = new Date('June 13 1976');
+    // alternate way to assign the specific date
+
+    otherDate = new Date('09/16/1976');
+    // alternate way to assign the specific date(MM/DD/YYYY)
+
+    let a;
+    a = otherDate.getDay();
+    // to get day of the date we have specified
+    // s - 0
+    // m - 1
+    // t - 2
+    // w - 3
+    // t - 4
+    // f - 5 
+    // s - 6
+
+    a = otherDate.getDate();
+    // to get only date of the date we have specified
+    
+    a = otherDate.getMinutes();
+    a = otherDate.getSeconds();
+    a = otherDate.getHours();
+    // to get minutes , hours and seconds of the date we have specified
+    
+    a = otherDate.getTime();
+    // returns timestamp of specified date from 1 january 1970
+    a = otherDate.getMilliseconds();
+    // get milliseconds of specified date
+    a = otherDate.getMonth();
+    // get month  of specified date
+    
+   a = otherDate.getDay();
+   // get week day of specified date
+    console.log(a)
+
+    // Setting the date 
+
+    otherDate.setDate(23);
+    // to change/set the date of the specified date
+
+    otherDate.setMonth(0);
+    // to change/set the month of the specified date (0 = january)
+
+    otherDate.setFullYear(1900);
+     // to change/set the year of the specified date 
+    otherDate.setMinutes(2);
+    otherDate.setHours(1);
+    otherDate.setSeconds(3);
+    // to set/change minutes , hours and seconds of the specified date
+    
+    console.log(otherDate)
+
+
+</script>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div></div>> -->
+        <div class="sing">
+            <ul>
+                <li class="first">hello</li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        </div>
+        <div class="sing">2</div>
+        <div class="sing">3</div>
+        <div class="sing">4</div>
+
+    </div>
+</body>
+<script>
+
+    // traversing means going inside element like parent of children or children of children
+
+
+    let cont = document.querySelector(".container")
+    cont.childNodes
+    cont.children
+    // two ways to get children of a parent 
+    // child nodes return all nodes
+    // children return only existing elements
+
+    let nodeName = cont.childNodes[1].nodeName
+    // to get nodeame of particular node
+
+    let nodeType = cont.childNodes[1].nodeType
+    // to get node type of the particular node
+    console.log(nodeType)
+
+    // node types
+    // 1 - element
+    // 2 - attribute
+    // 3 - text node
+    // 8 - Comment
+    // 10 - doctype
+
+    console.log(document.querySelector(".container").children[0].children[0].children[0])
+    // to get children of children- above example will return li
+
+    console.log(document.querySelector(".container").firstChild)
+// to get first child along with all the nodes we use firstchild
+
+    console.log(document.querySelector(".container").firstElementChild)
+    // to get first child without all the nodes we use firstchild
+
+    console.log(document.querySelector(".container").childElementCount)
+    // to get the number of child elements
+
+    console.log(document.querySelector(".container").nextElementSibling)
+    // to get siblings
+</script>
+
+</html>

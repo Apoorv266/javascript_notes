@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let regex = /A*poorv/;
+
+    // Lets look into some metacharacter symbols
+
+    // regex = /^Apoorv/; // ^ means expression will match if string starts with
+    // // (^) ---> carrot
+    // // The string should begin with the specified word written after this character.
+
+    // regex = /oorv$/; // $ at the end of the string means "string ends with"
+
+    // regex = /A./g; //matches any one character
+    // any character between h and rry will be matched
+    // regex = /A*p/g; //matches any 0 or more characters
+    // 0 or more characters between h and rry will be matched
+
+    // regex = /Aa?poorvi?/; //? after character means that character is optional
+    regex = /a?poo123rvi?/g;
+    // // it matches the middle part seperately if its in same seqence as the regular expression
+
+    // regex = /A\*poorv/
+    // to include * in regular expression without considering it as Metacharacters symbol
+
+
+    let str = "here is Aprv and is very poo123rv poo123rv"
+
+    let result = regex.exec(str) 
+    console.log(result)
+
+    if (regex.test(str)) {
+        console.log("string matches the expression")
+        // console.log(regex.source)
+        // to know what is written inside regular expression literal
+    }
+
+    else {
+        console.log("string doesnt matches the expression")
+
+    }
+</script>
+
+</html>

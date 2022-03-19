@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="newheading">
+    </div>
+    <div id="replace"></div>
+    <button id="btn">Edit</button>
+</body>
+<script>
+    let heading = document.createElement("h1")
+    heading.innerHTML = `This is my element click to edit`
+    heading.id = "heading"
+    newheading.append(heading)
+
+    newheading.addEventListener('click', function (e) {
+        let inputfield = document.createElement("input")
+        inputfield.id = "inputid";
+        let get = document.getElementById("newheading")
+        let repe = document.getElementById("replace")
+        // get.append(inputfield)
+
+        repe.appendChild(inputfield);
+
+        let bttn = document.getElementById("btn")
+        bttn.innerText = "Save changes"
+    })
+
+
+    btn.addEventListener('click', function (e) {
+        if (btn.innerText == "Save changes") {
+            let newDoc = document.getElementById("replace").children[0].value
+            heading.innerHTML = newDoc
+            let inStyle = document.querySelector("#inputid")
+            //             inStyle.style.display = "none"
+            // with display = none the chances are not saving becuase we have hide the input box with none so how will it fetch the input value therefore to hide input we will use remove()
+            
+            inStyle.remove()
+
+            console.log("hello")
+            // btn.innerText = "edit"
+        }
+
+        // document.getElementById("heading").innerText.replaceWith(newDoc)
+        // document.querySelector("h1").replaceWith(newDoc)
+
+
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Symbols are primitive data type introduced in ES6 and whenever it is used it generates a new primitive data type which is completely unique 
+    let sym1 = Symbol("My identifier")
+    let sym2 = Symbol("My identifier")
+    // symbols make something unique - though both symbols have "My identifier" but sym1 "My identifier" is different from sym2 "My identifier" and hence sym1 === sum2 would return falses
+    console.log(sym1 === sym2)
+
+
+    // if we use this without symbol it would return true
+    let sym3 = "My identifier"
+    let sym4 = "My identifier"
+    console.log(sym3 === sym4)
+
+    // symbols were introduced to make unique keys in objects
+    const k1 = Symbol("identifier of k1")
+    const k2 = Symbol("identifier of k2")
+
+    myObj = {};
+    myObj[k1] = "Harry"
+    myObj[k2] = "Kapil"
+    myObj.name = "Rohan" // adding one simple key in the object without using symbols
+    // myObj["name"] = "Rohan" altername way to add key value pairs
+
+    console.log(myObj)
+    console.log(myObj[k1])
+    console.log(myObj[k2]) // correct way to access the symbols
+
+    // symbols can only be accessed with the help of square brackets and not dot...when we use dot then k2 would be passed as string and would search k2 as string not as variable...hence it would be similar to (symbols["k2"]) 
+       
+    // console.log(myObj.k2) // wrong way to access the symbols
+
+    // while iterating an objects with sybmols...the symbols are ignored and only actual key value pair would be iterated (name = rohan)
+    for (key in myObj){
+        console.log (key, myObj[key]) 
+    }
+
+    // to convert object to json we use stringify
+    // while converting object to json using stringify, symbols would be ignored
+    console.log(JSON.stringify(myObj));
+</script>
+
+</html>

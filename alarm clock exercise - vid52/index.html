@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="currDate"></div>
+    <div>
+        <input type="text" id="fname" name="fname" placeholder="Set alarm">
+        <button id="btn">Click me!
+        </button>
+    </div>
+</body>
+<script>
+    //Problem Statement:-
+    // The task you have to do is to create an alarm clock in JavaScript(Use your creativity). The Alarm app should allow the user to set the alarm for a certain time. 
+    // can have input box and ask user to add time
+
+    function myTimer() {
+        let d = new Date();
+        let currDate = document.getElementById("currDate")
+        currDate.innerHTML = d.toLocaleTimeString();
+    }
+    currDate.style.fontSize = "100px"
+    currDate.style.textAlign = "center"
+    setInterval(myTimer, 1000);
+
+    let alam = document.getElementById("fname")
+    let btn = document.getElementById("btn")
+    console.log(alam.value)
+
+
+    btn.addEventListener("click", func)
+
+    function func() {
+        let da = new Date();
+        var str = da.toLocaleTimeString();
+    var regExp = /\b([01]\d|2[0-3]):[0-5]\d:[0-5]\d\b/g;
+        if (str.match(regExp)) {
+            console.log("red")
+        }
+    }
+
+    
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // promise has 3 conditions:-
+    // 1. resolve
+    // 2.reject
+    // 3.pending
+    function func1() {
+        // promise takes a function which in turn takes 2 functions - 1. resolve 2.reject
+        return new Promise(function (resolve, reject) {
+            setTimeout(() => {
+                const error = true;
+                if (!error) {
+                    console.log(`Function : Your promise has been resolved`)
+                    resolve();
+                }
+
+                else {
+                    console.log(`Function : Your promise is not resolved`)
+                    reject(`Sorry not fulfilled`)
+                    // this will stored in arument error of .catch
+                }
+            }, 2000);
+        })
+    }
+
+    func1().then(function () {
+        console.log("Harry: Thanks for resolving")
+    }).catch(function (error) {
+        console.log("Harry: very bad || " + error)
+    })
+
+
+    // in place of resolve() whatever is inside .then will be run
+    // in place of reject() whatever is inside .catch will be run
+    // promises are the alternative of callback functions
+
+</script>
+
+</html>

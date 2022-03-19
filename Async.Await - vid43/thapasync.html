@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const prom = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let rollNo = [1, 2, 3, 4, 5]
+            resolve(rollNo)
+            // the parameter that is passed to resolve will be taken by .then as argument
+        }, 2000);
+    });
+
+    const getdata = (function (params) {
+        // params here take the value of getdata(thisisit[1])
+        return new Promise((resolve, reject) => {
+            setTimeout(function (params) {
+                let biodata = {
+                    name: "Apoorv",
+                    age: 21
+                }
+                resolve(`my roll number is ${params} and my name is ${biodata.name}`)
+            }, 2000, params)
+        })
+    })
+
+    // async function getData() {
+    //     const rolldata = await prom;
+    //     console.log(rolldata);
+
+    //     const biodatas = await getdata(rolldata[1])
+    //     console.log(biodatas)
+
+    //     return biodatas;
+
+    // }
+
+    // const getName = getData().then((myname) => {
+    //     console.log(myname)
+    // })
+
+
+    // a promise
+    let promise = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            resolve('Promise resolved')
+        }, 1000);
+    });
+
+    // async function
+    async function asyncFunc() {
+
+        // wait until the promise resolves 
+        let result = await promise;
+
+        console.log(result);
+        console.log('hello');
+    }
+
+    // calling the async function
+    // promise.then((data) => {
+    //     console.log(data)
+    // });
+    asyncFunc()
+
+</script>
+
+</html>

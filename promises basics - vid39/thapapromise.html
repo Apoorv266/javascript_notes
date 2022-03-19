@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const prom = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let rollNo = [1, 2, 3, 4, 5]
+            resolve(rollNo)
+            // the parameter that is passed to resolve will be taken by .then as argument
+        }, 2000);
+    });
+
+    const getdata = (function (params) {
+        // params here take the value of getdata(thisisit[1])
+        return new Promise((resolve, reject) => {
+            setTimeout(function (params) {
+                let biodata = {
+                    name: "Apoorv",
+                    age: 21
+                }
+                resolve(`my roll number is ${params} and my name is ${biodata.name}`)
+            }, 2000, params)
+            // params is first act as a parameter that takes can agrument from the function getdata in the form of params which in return is inherited as parameter from getdata argument which is (thisisit[1])
+
+            // params is an argument that is passed to the setTimeout as parameter
+        })
+    })
+
+    // prom.then((thisisit) => {
+    //     console.log(`${thisisit} is the rollno`);
+    //     getdata(thisisit[1]).then((msg) => {
+    //         // getdata is the function and it takes an argument (thisisit[1]) which inreturn invokes get data function
+    //         console.log(msg)
+    //     })
+    // })
+
+
+    // alternative way 
+    // thisisit takes the value of rollNo as rollNo is insde resolve
+    prom.then((thisisit) => {
+        console.log(`${thisisit} is the rollno`);
+        return getdata(thisisit[1]);
+        // this value is returned to the new promise constructor (getdata) as params
+    }).then((msg) => {
+        // msg will inherit the value of resolve(`Printed ${params}`)
+        console.log(msg)
+    })
+        .catch((error) => {
+            console.log(`${error} Error happened`)
+        })
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Library {
+        constructor(bookList) {
+            this.bookList = bookList;
+            this.issuedBooks = {};
+            // An empty object is creatd
+        }
+
+        getBookList() {
+            this.bookList.forEach(element => {
+                console.log(element);
+            });
+        }
+
+        issueBook(bookname, user) {
+            if (this.issuedBooks[bookname] == undefined) {
+                // this is the syntax of adding key value pair to the empty object this.issuedBooks
+                this.issuedBooks[bookname] = user;
+                // the value of newly added key is set as user
+                console.log("issued successfully")
+            }
+            else {
+                console.log("This book is already issued!");
+            }
+        }
+
+        returnBook(bookname) {
+            delete this.issuedBooks[bookname];
+            // to remove the property of the object we use {delete}
+        }
+
+
+    }
+
+    harryLib = new Library("Narnia")
+    console.log(harryLib)
+
+    console.log(harryLib.issueBook("Harry potter", "Kapil"))
+    console.log(harryLib.issueBook("Harry potter", "hello"))
+
+</script>
+
+</html>

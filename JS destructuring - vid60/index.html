@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // destructuring means taking values from array or properties from objects 
+    // the ultimate goal is to obtain values weather it is of array or object
+
+    // ----------------------------------------------------Destructuring in array---------------------------------------------------------------
+
+    // older way
+    const arr = [1, 2]
+    // assigning array values to local variables by using indexes
+    const one = arr[0]
+    const two = arr[1]
+    console.log(one)
+    console.log(two)
+
+    // using destructuring
+    // but here be directly compared variable with the array values so no need to designated with the help of index
+    const arr2 = [1, 2]
+    // we can assign variable name through each index
+    // the position of variable name matches the value index (variable position represent the value index in array )
+    // NOTE : three, four are the variables here that takes the array value 1,2 
+    let [three, four] = arr2
+    console.log(three, four)
+
+
+    // to assign only couple of initial variables and then put the remaining in an array
+    const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let [five, six, ...seven] = arr3; //five would be assigned 1 and six would be assigned 2 and rest will be assigned in seven in form of array
+    console.log(five, six, seven)
+
+    // we can also assign fallback values if the original index value is not available
+    const arr4 = [1, 2, 3, 4]
+    let [l, m, n, o, p = 9] = arr4 //since p doesnt have any corresponding value in original arr4 there we have assigned a fallback value 9 to p
+    console.log(l, m, n, o, p)
+
+
+
+    // ------------------------------------------------Destructuring in object---------------------------------------------------------------
+
+    //old way of accessing the values of properties 
+    const obj = {
+        brinjal: "violet",
+        banana: "yellow",
+        tomato: "red",
+    }
+    console.log(obj.brinjal)
+    console.log(obj.banana)
+    console.log(obj.tomato)
+
+
+    //accessing the values using destructuring
+    // variables are assigned to the properties NOTE: here (brinjal, banana, tomato) are variables here and not object properties...these variables takes the value of the property
+    const { brinjal, banana, tomato } = obj
+    console.log(brinjal, banana, tomato)
+
+    // to assign only couple of initial variables and then put the remaining in an object
+
+    const obj2 = {
+        red: "violet",
+        blue: "yellow",
+        orange: "red",
+        white: "green",
+    }
+
+    const { red, blue, marhoon = "dog", ...y } = obj2 //we have created a fallback value for marhoon has it was not existing the original obj2
+    console.log(blue, red, marhoon, y)
+
+    // NOTE: ONLY PROPERTY NAME CAN BE ASSIGNED AS VARIABLES IN DESTRUCTURING OBJECTS LIKE FOR RED WE CAN ONLY USE CONST {RED} AND NOT CONST{x}...IT WOULD BE UNDEFINED IN SECOND CASE
+
+
+    // accessing nested object in objects
+    const obj3 = {
+         red : "violet",
+        hobb: {
+        first: "playing",
+            sec : "coding"
+    }
+    }
+    const { hobb } = obj3
+    console.log(`i like doing ${hobb.sec}`)
+
+
+
+    // to reasign the name of the property 
+    const obj4 = {
+        bird: "fly",
+    }
+    const {bird:bats} = obj4
+    // bird variable is now named as bats which value fly
+    console.log(`bats can also ${bats}`)
+
+
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------
+
+    let a, b;
+    [a, b] = [23, 42]
+    console.log(a, b)
+
+    // with the help of ... the extra numbers would be assigned to d after 4 till 10 in the form of array
+    let [f, g, c, ...d] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    console.log(f)
+    console.log(g)
+    console.log(c)
+    console.log(d)
+
+
+
+    const fruits = ['Apple', 'Bananas', 'Mangoes'];
+    [a, b, c] = fruits;
+    console.log(a, b, c)
+
+
+    // Object Destructuring
+    const laptop = {
+        model: "HP Pavilion",
+        age: "23 days",
+        gender: "Male",
+        net: 1233,
+        start: function () { console.log('started'); }
+    }
+
+    const { model, age, gender, net, start } = laptop;
+    console.log(model, age, gender, net, start);
+    laptop.start()
+</script>
+
+</html>

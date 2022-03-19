@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    const obj = {
+        name: "Apoorv",
+        class: 1,
+        city: "dheradun",
+        love: "mumbai",
+        obj : "obj1"
+    }
+
+    console.log(obj)
+
+    const obj2 = {
+        name: "Kapoor",
+        class: 2,
+        obj : "obj2",
+        __proto__: obj
+        // we have added the protoype of object obj to object obj2
+        // prototype is properties and methods
+    }
+
+    console.log(obj2)
+    // now obj2 can access the city of obj
+
+    const obj3 = {
+        name: "Karan",
+        class: 3,
+        obj : "obj3",
+        __proto__: obj2
+        // we have added the protoype of object obj to object obj2
+        // prototype is properties and methods
+    }
+
+    console.log(obj3)
+    // now obj2 can access the city of obj as its prototype is chained with obj2 which is inturn linked with obj
+    // prototype (properties and methods) of one object can be accessed with other objects this is called prototype chaining
+
+
+    // now doing prototype chaining using an array 
+
+    let arr = [1, 2, 3, 4]
+    // console.log(arr)
+
+    const obj4 = {
+        name: "Rahul",
+        class: 4,
+        obj : "obj4",
+        __proto__: obj3
+        // we have added the protoype of object obj to object obj2
+        // prototype is properties and methods
+    }
+
+    console.log(obj4)
+
+    // to divert prototype of one object to other we use __proto__ 
+    // to change the prototype of an object we use Obj2.prototype.Newprototype
+
+</script>
+
+</html>

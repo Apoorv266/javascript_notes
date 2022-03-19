@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let chars = ['A', 'B', 'A', 'C', 'B'];
+    console.log(chars)
+    console.log(chars.indexOf('C'))
+
+    chars.forEach((c, index) => {
+        console.log(`${chars.indexOf(c)}`);
+    });
+
+    const duplicates = chars.filter((item, index) => index === chars.indexOf(item));
+
+    console.log(duplicates)
+
+
+    // checking the duplicates using for loop method
+
+
+
+    // let arr = ['A', 'B', 'A', 'C', 'B'];
+    // console.log(arr.lastIndexOf("A"))
+    // let result = false;
+    // // iterate over the array
+    // for (let i = 0; i < arr.length; i++) {
+    //     // compare the first and last index of an element
+    //     let uniqueChars = [];
+    //     if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+    //         uniqueChars.push(arr[i]);
+    //         // terminate the loop
+
+    //         console.log(uniqueChars)
+    //     }
+    // }
+
+    let arr = ['A', 'B', 'A', 'C', 'B'];
+    //console.log(arr.lastIndexOf("A"))
+    let uniqueChars = [];
+    let result = false;
+    // iterate over the array
+    for (let i = 0; i < arr.length; i++) {
+        // compare the first and last index of an element
+
+        if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i]) && !uniqueChars.includes(arr[i])) {
+            uniqueChars.push(arr[i]);
+        }
+    }
+    console.log(uniqueChars);
+
+
+
+
+    // in this example we compare the first index(indexof) and last index from beginning(lastIndexOf) of elements of array...the array item that is getting duplicated would have different indexof and lastindextof for example the A has indexof 0 while last index of 2 while the item that is not repeated such as C would have same indexof and lastindextof
+
+    // in the loop we have checked that which all elements have different indexof and lastindexof....only duplicate elements follow this criteria
+
+    // duplicate items = indexof not equal to lastIndexOf
+    // non duplicate items = indexof equal to lastIndexOf
+
+    // A  - 0 - 2
+    // B  - 1 - 4
+    // A  - 0 - 2
+    // C  - 3 - 3
+    // B  - 1 - 4
+
+    let arr2 = ['A', 'B', 'A', 'C', 'B'];
+    arr2.forEach((c, index) => {
+        console.log(`${c} - ${index} - ${arr2.indexOf(c)} - ${arr2.lastIndexOf(c)}`);
+    });
+
+    // console.log(uniqueChars)
+</script>
+
+</html>

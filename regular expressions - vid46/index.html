@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let reg = /Apoorv/g;
+    // this is regular expression literal in javascript
+//    let reg = /Apoorv/g;
+    // g is the global flag which scans whole string
+     reg = /Apoorv/i;
+    //  i flag is used for case insensitive purpose 
+    console.log(reg)
+
+    console.log(reg.source)
+    // to know what is written inside regular expression literal
+
+    let s = "This is great Apoorv and also Apoorv bhai";
+    // function to match expression
+
+
+
+    // 1. exec() - This function will return an array for match or null for no match
+    let result = reg.exec(s);
+    console.log(result)
+    // an array is returned showing /Apoorv/ in s
+    console.log(result.index)
+    // to get the index at which the matched expression occurred 
+
+    // to get the second instance of the expression in a string we use a flag
+
+    result = reg.exec(s);
+    console.log(result)
+    console.log(result.index)
+    //    now if we use this expression again we will get 2nd instance also
+
+
+    // 2. test() - Returns true or false
+    let result2 = reg.test(s);
+    console.log(result2);
+    // This will only print true if the "reg" is there in the string "s"
+
+
+
+    // 3. match() - It will return an array of results or null
+    // match() is applied on the string
+    // let result3 = reg.match(s) //---> This is wrong!!
+    let result3 = s.match(reg) // ---> This is right
+    console.log(result3)
+
+
+    // 4. search() - Returns index of first match else -1
+    // let result4 = reg.search(s) ---> This is wrong!!
+    let result4 = s.search(reg) // ---> This is right
+    console.log(result4);
+
+
+    // match() and search() searches the string for the regular expression while exec() and test() searches regular expression in the string
+
+
+    // 5. replace() - Returns new replaced string with all the replacements (if no flag is given, first match will be replaced)
+
+
+    let result5 = s.replace(reg, 'SHUBHAM');
+    console.log(result5);
+
+    // if global flag is not given then only first instance will be replaced
+
+    reg = /Apoorv/g;
+    let result6 = s.replace(reg, 'SHUBHAM');
+    console.log(result6);
+    // if global flag is given then all instances will be replaced
+
+
+</script>
+
+</html>

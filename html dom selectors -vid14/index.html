@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dance" class="sing">
+        <p>hello world</p>
+    </div>
+    <h1>Balle Blle</h1>
+
+    <div class="container">
+        <P class="hello">ok</P>
+        <P class="hello">ok</P>
+        <P class="hello">ok</P>
+        <P class="hello">ok</P>
+    </div>
+</body>
+<script>
+
+    // single element selector 
+
+
+    // to access element using id
+    // let element = document.getElementById("dance")
+
+    // element = element.className;
+    // to access classname of the element
+
+    // element = element.childNodes;
+    //    to access child nodes
+
+    // element = element.parentNode;
+    // to acess parent node
+
+    // element = element.innerText = "hello how are you";
+    // to add inner text 
+
+    // element = element.innerHTML = "<b>hello how are you </b>";
+    // to add inner HTML 
+
+    // element = element.style.color = "red";
+    // to change style of an element
+    // console.log(element)
+
+    // -----------------------------------------------------------------------------------------------------------------
+
+    let drl = document.querySelectorAll("#dance")
+    // to select element using a id using querySelector
+
+    drl = document.querySelectorAll("#dance")[0]
+    // Since querySelector returns nodelist we can reach to the element using index number
+
+    drll = document.querySelectorAll(".sing")
+    // to select element using a class using querySelector
+
+    drll = document.querySelectorAll(".sing")[0]
+    // to select element using a class using querySelector
+
+    drll = document.querySelectorAll("h1")
+    // we can also put tag name directly in query selector
+
+    drll = document.querySelector("h1")
+    // query selector just shows first occurance while query selector all shows all occurances in form of nodelist
+
+    // console.log(drll)
+
+    // --------------------------------------------------------------------------------------------------------------
+
+    // multi element selector
+ 
+    let elems = document.getElementsByClassName("sing")
+// to select element by class name - returns html collection
+
+elems = document.getElementsByClassName("sing")[0]
+// to select one html collection 
+
+elems = document.getElementsByClassName("container")
+console.log(elems[0].getElementsByClassName("hello"))
+// to get all elements inside a parent with particular class name
+
+Array.from(elems).forEach(element => {
+    console.log(element)
+    element.style.color = "pink"
+})
+// to iterate all the elements of class container- we first converted the container into an array with array.from and then used forEach which is used to iterate over an array
+
+// console.log(elems)
+</script>
+
+</html>

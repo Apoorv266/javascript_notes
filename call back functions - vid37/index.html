@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is student list</h1>
+    <ul id="students"></ul>
+</body>
+<script>
+
+    const students = [
+        { name: "harry", subject: "Javascript" },
+        { name: "Rohan", subject: "python" }
+    ]
+
+
+    function enrollStudent(student , mycallback) {
+        // second parameter is a callback function which is provided as a normal parameter to the function 
+        // this function push new input into students 
+        setTimeout(function () {
+            students.push(student);
+            mycallback();
+            // mycallback will represent getStudent
+        }, 3000)
+    }
+
+    function getStudent() {
+        // the students array is added to the DOM
+        setTimeout(function () {
+            let str = "";
+
+            students.forEach(function (student) {
+                str += `<li>${student.subject}</li>`
+            })
+
+            document.getElementById("students").innerHTML = str;
+        }, 1000)
+    }
+
+
+
+
+    let newStudent = { name: "Sunny", subject: "Go" }
+    enrollStudent(newStudent, getStudents);
+    // getStudents is the second parameter that will be added to mycallback
+    // getStudent();
+
+
+
+    // getStudent() function will run before enrollStudent() function
+    // With the help of callback function we will tell the getStudent() to wait until the enrollStudent() is ready
+    // forEach is synchronous
+    // setTimeout is asynchronous
+</script>
+
+</html>

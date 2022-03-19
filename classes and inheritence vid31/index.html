@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    class Employee {
+        constructor(givenName, givenExperience, givenDivision) {
+            this.name = givenName;
+            this.experience = givenExperience;
+            this.divison = givenDivision;
+        }
+
+        slogan() {
+            return `Iam ${this.name} and this `
+        }
+
+        joiningyear() {
+            return 2022 - this.experience;
+        }
+
+        static add(a, b) {
+            return a + b
+        }
+
+        // to add a method in class that can be accessed without creating object we use static function
+    }
+
+    let obj = new Employee("Apoorv", 23, "Developer")
+    console.log(obj.joiningyear())
+    console.log(obj)
+
+    console.log(Employee.add(22, 45))
+
+
+
+    // inheriting programmer object from Employee object 
+
+
+
+    class programmer extends Employee {
+        // Extends help in inheriting the already existing properties of an object 
+        constructor(givenName, givenExperience, givenDivision, givenLanguage) {
+            super(givenName, givenExperience, givenDivision);
+            this.language = givenLanguage
+            // super means calling the constructor from which the current class is extended
+        }
+
+        static multiply(a, b) {
+            return a * b
+        }
+    }
+
+    let rohan = new programmer("Kapil", 3, "Go", "Kapil232")
+    console.log(rohan)
+    console.log(programmer.multiply(23, 54))
+</script>
+
+</html>

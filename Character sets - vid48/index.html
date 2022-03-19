@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // character sets are made using square brackets []
+
+
+    let regex = /A[a-z]poorv/; // can be any character from a to z
+    regex = /A[aty]poorv/; // can be any one out of a, t or y (or any other characters)
+    regex = /A[^aty]poorv/; // cannot be any one out of a, t or y
+    regex = /A[^aty]poorv[yYu]/; // cannot be any  one out of a, t or y + can be either of a u or y
+    regex = /A[a-zA-Z]poorv[yu0-9][0-9]/; // we can have as many character sets as we want
+
+    let str = "Apoorv9 is there"
+
+
+    // Quantifiers - We use {}
+    regex = /Apoor{2}v/; // r can occur exactly 2 times
+    regex = /Apoor{0,2}v/; // r can occur 0 , 1 or 2 times.
+
+
+    str = "Apoorv is there"
+
+  
+    // Groupings  - We use paranthesis for groupings ()
+    regex = /(har){2}([0-9]r){3}/
+    // har will be get 2 times
+    // 0 - 9 value is there along with r 3 times
+
+    str = "harhar1r4r5r bhai harhar1rzdfzs4r5r bhai";
+
+
+    let result = str.match(regex);
+    console.log("The result from exec is ", result);
+
+
+    if (regex.test(str)) {
+        console.log(`The string ${str} matches the expression ${regex.source}`);
+    }
+    else {
+        console.log(`The string ${str} does not match the expression ${regex.source}`);
+    }
+
+
+    let text = "Is this his";
+let pattern = /^Is/g;
+let result2 = text.match(pattern);
+
+document.write = result2;
+</script>
+
+</html>

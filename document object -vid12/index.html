@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="first" id="myfirst">child 1</div>
+        <div class="first">child 2</div>
+        <div class="first">child 3</div>
+        <div class="first">child 4</div>
+    </div>
+
+    <a href="https://github.com/">hello</a>
+</body>
+<script>
+
+    // Document object is an object and is a reference data type
+
+    // to get all the document element (DOM)
+    // Since document object is part of window object we use window.document
+    let a = window.document
+
+    // to get html collection of the page
+    let a = document.all
+
+    // to iterate all the document.element we first convert window document which is an object to array and then use for each
+    Array.from(a).forEach(function (element) {
+        console.log(element);
+    })
+
+    // to get body element of DOM 
+    let a = document.body
+
+    // to get forms element of DOM 
+    let a = document.forms
+
+    // to select a particular form
+    let a = document.forms[1]
+
+
+    // map function - to do individual action on each array item
+    const num = [2, 4, 5, 6, 6]
+
+    function myFunction(x) {
+        return x * 2;
+    }
+
+    let num2 = num.map(myFunction)
+    console.log(num2)
+
+    // to fetch all the links from the document
+
+    let linkss = document.links
+    console.log(linkss)
+
+    // to get only href attribute of the link 
+
+    let linksss = document.links[0].href
+    console.log(linksss)
+
+    // to fetch all images
+    let a = document.images;
+    Array.from(a).forEach(function (element) {
+        console.log(element);
+    });
+
+    // to fetch all scripts 
+    let b = document.script;
+    Array.from(b).forEach(function (element) {
+        console.log(element);
+    })
+</script>
+
+</html>
