@@ -24,11 +24,17 @@ let printAge = function (state) {
     console.log(this.age + " " + state)
 }
 
+// call
 // passing parameter to function using call
 printAge.call(useDetails, "Delhi")
 printAge.call(useDetails2, "Mumbai")
 
-
-// passing parameter to function using call
+// Apply
+// passing parameter to function using apply
 printAge.apply(useDetails, ["Delhi"])
 printAge.apply(useDetails2, ["Mumbai"])
+
+// bind
+// we create a copy of call function and just store it in variable and use that variable instead
+let newFunc = printAge.bind(useDetails, "Delhi")
+newFunc()
